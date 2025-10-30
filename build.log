@@ -1,0 +1,391 @@
+➜ tampermonkey-editors ✗ ./scripts/dev-setup.sh
+🚀 Tampermonkey Editors - Development Setup
+==========================================
+
+Platform: macOS
+
+📦 Step 1/3: Building Tampermonkey Editors extension...
+Building extension...
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+npm warn deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+npm warn deprecated eslint@7.32.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 371 packages, and audited 373 packages in 3s
+
+60 packages are looking for funding
+  run `npm fund` for details
+
+3 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> tampermonkey_editors@1.0.0 clean
+> rm -rf out > /dev/null 2>&1; exit 0;
+
+
+> tampermonkey_editors@1.0.0 check
+> node -r esm Makefile.js check
+
+Running for target: chrome, manifest: mv3
+Archive:  source_for_chrome_release_999.zip
+   creating: release
+   creating: release/build_sys
+  inflating: release/build_sys/firefox_mv3.manifest.json  
+  inflating: release/build_sys/check_i18n.js  
+  inflating: release/build_sys/helpers.js  
+  inflating: release/build_sys/tme_test.pem  
+  inflating: release/build_sys/chrome_mv3.manifest.json  
+  inflating: release/build_sys/mkrelease.sh  
+  inflating: release/build_sys/README.FIREFOX  
+  inflating: release/LICENSE         
+   creating: release/images
+ extracting: release/images/icon.png  
+ extracting: release/images/icon24_forbidden.png  
+ extracting: release/images/icon48.png  
+  inflating: release/images/icon128.png  
+ extracting: release/images/icon48_forbidden.png  
+ extracting: release/images/icon_forbidden.png  
+ extracting: release/images/icon32_forbidden.png  
+  inflating: release/images/icon128_forbidden.png  
+ extracting: release/images/icon24.png  
+ extracting: release/images/icon32.png  
+  inflating: release/webpack.config.js  
+  inflating: release/package-lock.json  
+  inflating: release/package.json    
+  inflating: release/tsconfig.json   
+   creating: release/eslint
+  inflating: release/eslint/index.js  
+  inflating: release/eslint/no-global-object-access.js  
+  inflating: release/eslint/package.json  
+  inflating: release/eslint/no-unsafe-global-object-access.js  
+ extracting: release/rnd.txt         
+   creating: release/i18n
+   creating: release/i18n/en
+ extracting: release/i18n/en/messages.json  
+  inflating: release/Makefile.js     
+   creating: release/vendor
+   creating: release/vendor/file-system-access
+  inflating: release/vendor/file-system-access/FileSystemFileHandle.ts  
+  inflating: release/vendor/file-system-access/web-streams-ponyfill.ts  
+  inflating: release/vendor/file-system-access/LICENSE  
+  inflating: release/vendor/file-system-access/FileSystemWritableFileStream.ts  
+   creating: release/vendor/file-system-access/adapters
+  inflating: release/vendor/file-system-access/adapters/memory.ts  
+  inflating: release/vendor/file-system-access/package.json  
+  inflating: release/vendor/file-system-access/util.ts  
+  inflating: release/vendor/file-system-access/FileSystemDirectoryHandle.ts  
+  inflating: release/vendor/file-system-access/getOriginPrivateDirectory.ts  
+  inflating: release/vendor/file-system-access/interfaces.ts  
+  inflating: release/vendor/file-system-access/FileSystemHandle.ts  
+   creating: release/src
+   creating: release/src/background
+  inflating: release/src/background/host_permission.ts  
+  inflating: release/src/background/storage.ts  
+  inflating: release/src/background/find_tm.ts  
+  inflating: release/src/background/browser.ts  
+  inflating: release/src/background/types.ts  
+  inflating: release/src/background/converter.ts  
+  inflating: release/src/background/index.ts  
+  inflating: release/src/background/config.ts  
+   creating: release/src/options
+  inflating: release/src/options/options.js  
+  inflating: release/src/options/options.html  
+   creating: release/src/types
+  inflating: release/src/types/shared.d.ts  
+   creating: release/src/shared
+  inflating: release/src/shared/event_emitter.ts  
+  inflating: release/src/shared/environment.ts  
+  inflating: release/src/shared/lock.ts  
+  inflating: release/src/shared/utils.ts  
+  inflating: release/src/shared/logger.ts  
+ extracting: release/src/shared/global.d.ts  
+   creating: release/src/tab
+   creating: release/src/tab/page
+  inflating: release/src/tab/page/messaging.ts  
+  inflating: release/src/tab/page/messaging_file.ts  
+  inflating: release/src/tab/page/userscripts.ts  
+  inflating: release/src/tab/page/types.ts  
+  inflating: release/src/tab/page/index.ts  
+  inflating: release/src/tab/page/query_helper.ts  
+   creating: release/src/tab/bridge
+  inflating: release/src/tab/bridge/event_bridge.ts  
+  inflating: release/src/tab/bridge/index.ts  
+  inflating: release/src/tab/helper.ts  
+   creating: release/src/tab/content
+  inflating: release/src/tab/content/index.ts  
+   creating: release/src/tab/shared
+  inflating: release/src/tab/shared/sandbox.ts  
+  inflating: release/src/tab/shared/definitions.d.ts  
+   creating: release/src/env
+  inflating: release/src/env/index.ts  
+   creating: release/src/polyfills
+  inflating: release/src/polyfills/object_from_entries.ts  
+  inflating: release/src/polyfills/index.ts  
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+npm warn deprecated eslint@7.32.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 371 packages, and audited 373 packages in 2s
+
+60 packages are looking for funding
+  run `npm fund` for details
+
+3 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> tampermonkey_editors@1.0.0 build
+> node -r esm Makefile.js build -v 999 -t chrome -c off
+
+Running for target: chrome, manifest: mv3
+Running command pack now
+
+> tampermonkey_editors@1.0.0 pack
+> node -r esm Makefile.js pack
+
+Running for target: chrome, manifest: mv3
+asset rel/content.js 1.35 KiB [emitted] [minimized] (name: content) 1 related asset
+orphan modules 4.69 KiB [orphan] 4 modules
+./src/tab/content/index.ts + 4 modules 6.3 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3396 ms
+asset rel/page.js 21.4 KiB [emitted] [minimized] (name: page) 1 related asset
+asset rel/3rdpartylicenses.txt 1.21 KiB [emitted]
+orphan modules 51.9 KiB [orphan] 21 modules
+./src/tab/page/index.ts + 21 modules 59.4 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3966 ms
+assets by path rel/images/*.png 66.1 KiB
+  asset rel/images/icon128_forbidden.png 21.1 KiB [emitted] [from: images/icon128_forbidden.png] [copied]
+  asset rel/images/icon128.png 12.8 KiB [emitted] [from: images/icon128.png] [copied]
+  asset rel/images/icon48_forbidden.png 9.99 KiB [emitted] [from: images/icon48_forbidden.png] [copied]
+  asset rel/images/icon24_forbidden.png 7.04 KiB [emitted] [from: images/icon24_forbidden.png] [copied]
+  asset rel/images/icon32_forbidden.png 4.51 KiB [emitted] [from: images/icon32_forbidden.png] [copied]
+  asset rel/images/icon48.png 3.38 KiB [emitted] [from: images/icon48.png] [copied]
+  asset rel/images/icon_forbidden.png 2.36 KiB [emitted] [from: images/icon_forbidden.png] [copied]
+  + 3 assets
+assets by path rel/*.js 9.68 KiB
+  asset rel/background.js 9.02 KiB [emitted] [minimized] (name: background) 1 related asset
+  asset rel/options.js 671 bytes [emitted] [from: src/options/options.js] [copied] [minimized]
+asset rel/options.html 2.63 KiB [emitted] [from: src/options/options.html] [copied]
+asset rel/LICENSE 1.04 KiB [emitted] [from: LICENSE] [copied]
+asset rel/_locales/en/messages.json 2 bytes [emitted] [from: i18n/en/messages.json] [copied]
+orphan modules 22.5 KiB [orphan] 12 modules
+./src/background/index.ts + 12 modules 28.7 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3966 ms
+Running command manifest now
+
+> tampermonkey_editors@1.0.0 manifest
+> node -r esm Makefile.js manifest -v 999 -t chrome+mv3 -c off
+
+Running for target: chrome, manifest: mv3
+
+> tampermonkey_editors@1.0.0 package
+> node -r esm Makefile.js package -t chrome
+
+Running for target: chrome, manifest: mv3
+No suitable browser found.
+cp: out/sourcemaps.zip: No such file or directory
+cp: out/rel.zip: No such file or directory
+cp: out/rel.crx: No such file or directory
+Archive:  source_for_firefox_release_999.zip
+   creating: release
+   creating: release/build_sys
+  inflating: release/build_sys/firefox_mv3.manifest.json  
+  inflating: release/build_sys/check_i18n.js  
+  inflating: release/build_sys/helpers.js  
+  inflating: release/build_sys/tme_test.pem  
+  inflating: release/build_sys/chrome_mv3.manifest.json  
+  inflating: release/build_sys/mkrelease.sh  
+  inflating: release/build_sys/README.FIREFOX  
+  inflating: release/LICENSE         
+   creating: release/images
+ extracting: release/images/icon.png  
+ extracting: release/images/icon24_forbidden.png  
+ extracting: release/images/icon48.png  
+  inflating: release/images/icon128.png  
+ extracting: release/images/icon48_forbidden.png  
+ extracting: release/images/icon_forbidden.png  
+ extracting: release/images/icon32_forbidden.png  
+  inflating: release/images/icon128_forbidden.png  
+ extracting: release/images/icon24.png  
+ extracting: release/images/icon32.png  
+  inflating: release/webpack.config.js  
+  inflating: release/package-lock.json  
+  inflating: release/package.json    
+  inflating: release/tsconfig.json   
+   creating: release/eslint
+  inflating: release/eslint/index.js  
+  inflating: release/eslint/no-global-object-access.js  
+  inflating: release/eslint/package.json  
+  inflating: release/eslint/no-unsafe-global-object-access.js  
+ extracting: release/rnd.txt         
+   creating: release/i18n
+   creating: release/i18n/en
+ extracting: release/i18n/en/messages.json  
+  inflating: release/Makefile.js     
+   creating: release/vendor
+   creating: release/vendor/file-system-access
+  inflating: release/vendor/file-system-access/FileSystemFileHandle.ts  
+  inflating: release/vendor/file-system-access/web-streams-ponyfill.ts  
+  inflating: release/vendor/file-system-access/LICENSE  
+  inflating: release/vendor/file-system-access/FileSystemWritableFileStream.ts  
+   creating: release/vendor/file-system-access/adapters
+  inflating: release/vendor/file-system-access/adapters/memory.ts  
+  inflating: release/vendor/file-system-access/package.json  
+  inflating: release/vendor/file-system-access/util.ts  
+  inflating: release/vendor/file-system-access/FileSystemDirectoryHandle.ts  
+  inflating: release/vendor/file-system-access/getOriginPrivateDirectory.ts  
+  inflating: release/vendor/file-system-access/interfaces.ts  
+  inflating: release/vendor/file-system-access/FileSystemHandle.ts  
+   creating: release/src
+   creating: release/src/background
+  inflating: release/src/background/host_permission.ts  
+  inflating: release/src/background/storage.ts  
+  inflating: release/src/background/find_tm.ts  
+  inflating: release/src/background/browser.ts  
+  inflating: release/src/background/types.ts  
+  inflating: release/src/background/converter.ts  
+  inflating: release/src/background/index.ts  
+  inflating: release/src/background/config.ts  
+   creating: release/src/options
+  inflating: release/src/options/options.js  
+  inflating: release/src/options/options.html  
+   creating: release/src/types
+  inflating: release/src/types/shared.d.ts  
+   creating: release/src/shared
+  inflating: release/src/shared/event_emitter.ts  
+  inflating: release/src/shared/environment.ts  
+  inflating: release/src/shared/lock.ts  
+  inflating: release/src/shared/utils.ts  
+  inflating: release/src/shared/logger.ts  
+ extracting: release/src/shared/global.d.ts  
+   creating: release/src/tab
+   creating: release/src/tab/page
+  inflating: release/src/tab/page/messaging.ts  
+  inflating: release/src/tab/page/messaging_file.ts  
+  inflating: release/src/tab/page/userscripts.ts  
+  inflating: release/src/tab/page/types.ts  
+  inflating: release/src/tab/page/index.ts  
+  inflating: release/src/tab/page/query_helper.ts  
+   creating: release/src/tab/bridge
+  inflating: release/src/tab/bridge/event_bridge.ts  
+  inflating: release/src/tab/bridge/index.ts  
+  inflating: release/src/tab/helper.ts  
+   creating: release/src/tab/content
+  inflating: release/src/tab/content/index.ts  
+   creating: release/src/tab/shared
+  inflating: release/src/tab/shared/sandbox.ts  
+  inflating: release/src/tab/shared/definitions.d.ts  
+   creating: release/src/env
+  inflating: release/src/env/index.ts  
+   creating: release/src/polyfills
+  inflating: release/src/polyfills/object_from_entries.ts  
+  inflating: release/src/polyfills/index.ts  
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+npm warn deprecated eslint@7.32.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 371 packages, and audited 373 packages in 2s
+
+60 packages are looking for funding
+  run `npm fund` for details
+
+3 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> tampermonkey_editors@1.0.0 build
+> node -r esm Makefile.js build -v 999 -t firefox -c off
+
+Running for target: firefox, manifest: mv3ep
+Running command pack now
+
+> tampermonkey_editors@1.0.0 pack
+> node -r esm Makefile.js pack
+
+Running for target: firefox, manifest: mv3ep
+asset rel/content.js 1.62 KiB [emitted] [minimized] (name: content) 1 related asset
+orphan modules 4.69 KiB [orphan] 4 modules
+./src/tab/content/index.ts + 4 modules 6.3 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3403 ms
+asset rel/page.js 20.8 KiB [emitted] [minimized] (name: page) 1 related asset
+asset rel/3rdpartylicenses.txt 1.21 KiB [emitted]
+orphan modules 51.9 KiB [orphan] 21 modules
+./src/tab/page/index.ts + 21 modules 59.4 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3763 ms
+assets by path rel/images/*.png 66.1 KiB
+  asset rel/images/icon128_forbidden.png 21.1 KiB [emitted] [from: images/icon128_forbidden.png] [copied]
+  asset rel/images/icon128.png 12.8 KiB [emitted] [from: images/icon128.png] [copied]
+  asset rel/images/icon48_forbidden.png 9.99 KiB [emitted] [from: images/icon48_forbidden.png] [copied]
+  asset rel/images/icon24_forbidden.png 7.04 KiB [emitted] [from: images/icon24_forbidden.png] [copied]
+  asset rel/images/icon32_forbidden.png 4.51 KiB [emitted] [from: images/icon32_forbidden.png] [copied]
+  asset rel/images/icon48.png 3.38 KiB [emitted] [from: images/icon48.png] [copied]
+  asset rel/images/icon_forbidden.png 2.36 KiB [emitted] [from: images/icon_forbidden.png] [copied]
+  + 3 assets
+assets by path rel/*.js 9.5 KiB
+  asset rel/background.js 8.85 KiB [emitted] [minimized] (name: background) 1 related asset
+  asset rel/options.js 671 bytes [emitted] [from: src/options/options.js] [copied] [minimized]
+asset rel/options.html 2.63 KiB [emitted] [from: src/options/options.html] [copied]
+asset rel/LICENSE 1.04 KiB [emitted] [from: LICENSE] [copied]
+asset rel/_locales/en/messages.json 2 bytes [emitted] [from: i18n/en/messages.json] [copied]
+orphan modules 22.5 KiB [orphan] 12 modules
+./src/background/index.ts + 12 modules 28.7 KiB [built] [code generated]
+webpack 5.102.1 compiled successfully in 3794 ms
+Running command manifest now
+
+> tampermonkey_editors@1.0.0 manifest
+> node -r esm Makefile.js manifest -v 999 -t firefox+mv3ep -c off
+
+Running for target: firefox, manifest: mv3ep
+
+> tampermonkey_editors@1.0.0 package
+> node -r esm Makefile.js package -t firefox
+
+Running for target: firefox, manifest: mv3ep
+✅ Extension built successfully!
+
+🔧 Step 2/3: Setting up test Tampermonkey extension...
+Downloading Tampermonkey...
+--2025-10-30 14:54:33--  https://www.tampermonkey.net/crx/tampermonkey_stable.crx
+Resolving www.tampermonkey.net (www.tampermonkey.net)... 46.4.58.236
+Connecting to www.tampermonkey.net (www.tampermonkey.net)|46.4.58.236|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://data.tampermonkey.net/tampermonkey_stable.crx [following]
+--2025-10-30 14:54:34--  https://data.tampermonkey.net/tampermonkey_stable.crx
+Resolving data.tampermonkey.net (data.tampermonkey.net)... 2a01:238:20a:202:1079::, 81.169.145.79
+Connecting to data.tampermonkey.net (data.tampermonkey.net)|2a01:238:20a:202:1079::|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1686741 (1.6M)
+Saving to: ‘tampermonkey_stable.crx’
+
+tampermonkey_stable.crx                                                         100%[====================================================================================================================================================================================================>]   1.61M  4.63MB/s    in 0.3s    
+
+2025-10-30 14:54:34 (4.63 MB/s) - ‘tampermonkey_stable.crx’ saved [1686741/1686741]
+
+Extracting Tampermonkey...
+warning [tampermonkey_stable.crx]:  1060 extra bytes at beginning or within zipfile
+  (attempting to process anyway)
+➜ [1] tampermonkey-editors ✗ 

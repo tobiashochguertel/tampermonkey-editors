@@ -3,6 +3,7 @@
 ## Download & Extraction
 
 ✅ Successfully downloaded extension from Chrome Web Store
+
 - Extension ID: `lieodnapokbjkkdkhdljlllmgkmdokcm`
 - Version: 1.0.4 (Web Store) vs 1.0.999 (Ours)
 - Location: `comparison/webstore-extension/`
@@ -12,11 +13,13 @@
 ### 1. Editor Type Feature (Our Addition)
 
 **Web Store Version:**
+
 - ONLY supports `vscode.dev` (web editor)
 - No options page
 - Simple `onClicked` handler that always opens vscode.dev
 
 **Our Version:**
+
 - Supports BOTH `vscode.dev` AND `vscode://` (desktop)
 - Has options page to choose editor type
 - Complex `onClicked` handler with `editorType` check
@@ -42,6 +45,7 @@ we.onClicked.addListener(async()=>{
 ### 2. Files
 
 **Web Store has:**
+
 - background.js (9,187 bytes)
 - content.js (1,390 bytes)
 - page.js (22,098 bytes)
@@ -53,6 +57,7 @@ we.onClicked.addListener(async()=>{
 - _metadata/ (added by Chrome Web Store)
 
 **Our build has:**
+
 - All of the above PLUS:
 - **options.html** (3.2K) ← NEW
 - **options.js** (957 bytes) ← NEW
@@ -60,6 +65,7 @@ we.onClicked.addListener(async()=>{
 ### 3. Manifest Differences
 
 **Identical except:**
+
 - Version: 1.0.4 (Web Store) vs 1.0.999 (Ours)
 - Our build has: `"options_page": "options.html"`
 - Web Store has: `"update_url": ...` (added by store)
@@ -67,6 +73,7 @@ we.onClicked.addListener(async()=>{
 ### 4. Script Injection (Identical ✅)
 
 Both use the same `webNavigation.onCommitted` pattern:
+
 ```javascript
 ve.onCommitted.addListener(async e=>{
     const{url:t,tabId:a}=e;
@@ -125,17 +132,18 @@ Your browser might have old settings saved. Clear them:
    - chrome://extensions/ → Tampermonkey Editors → "Inspect views: service worker"
 
 2. Run this in console:
+
 ```javascript
 chrome.storage.local.get('config', (result) => {
     console.log('Current config:', result);
 });
 
 // If it shows editorType: 'desktop', fix it:
-chrome.storage.local.set({ 
-    'config': { 
+chrome.storage.local.set({
+    'config': {
         editorType: 'web',
         externalExtensionIds: ['dhdgffkkebhmkfjojejmpbldmpobfkfo']
-    } 
+    }
 }).then(() => {
     console.log('✅ Fixed to web editor');
     chrome.runtime.reload();
@@ -145,6 +153,7 @@ chrome.storage.local.set({
 ## Verification Steps
 
 1. **Check what opens:**
+
    ```
    Expected: https://vscode.dev/?connectTo=tampermonkey
    NOT: vscode://
@@ -163,8 +172,9 @@ chrome.storage.local.set({
 ## Files That Should Be Identical
 
 These files SHOULD match between Web Store and our build:
+
 - ✅ content.js (~1.4KB, similar size)
-- ✅ page.js (~22KB, similar size)  
+- ✅ page.js (~22KB, similar size)
 - ✅ background.js (~9KB, similar size with our additions)
 - ✅ manifest.json (except options_page)
 
@@ -178,6 +188,7 @@ The builds ARE correct! The issue is likely configuration.
 4. **Check console for errors**
 
 If still not working, we need to check:
+
 - Tampermonkey connection (is it enabled?)
 - VS Code dev tools logs
 - Network requests being made

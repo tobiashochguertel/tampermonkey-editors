@@ -46,7 +46,7 @@ fi
 # Build the extension
 if [ ! -d "node_modules" ]; then
     echo "Installing dependencies..."
-    npm install
+    NODE_ENV=development npm install --include=dev
 fi
 
 echo "Building extension..."

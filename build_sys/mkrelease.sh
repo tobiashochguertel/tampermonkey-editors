@@ -4,7 +4,7 @@
 
 version=
 
-USAGE="Usage: `basename $0` -v <version> -s";
+USAGE="Usage: $(basename $0) -v <version> -s"
 
 # Parse command line options.
 while getopts v:s OPT; do
@@ -32,40 +32,40 @@ fi
 
 rm -rf release 2>/dev/null
 mkdir release
-logfile=`pwd`/release/log.txt
+logfile=$(pwd)/release/log.txt
 touch $logfile
 
 npm install
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "npm install failed"
-  exit 1;
+  exit 1
 fi
 
 npm run clean
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "Release preparation failed"
-  exit 1;
+  exit 1
 fi
 
 npm run check
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "Release preparation failed"
-  exit 1;
+  exit 1
 fi
 
-tmpdir=`mktemp -d`
+tmpdir=$(mktemp -d)
 releasedir="$tmpdir/release"
 mkdir -p "$releasedir"
 cp -r build_sys eslint i18n images LICENSE Makefile.js package.json package-lock.json src tsconfig.json vendor webpack.config.js "$releasedir"
 RANDOM_STRING=$(openssl rand -base64 32 | head -c 10)
-echo "$RANDOM_STRING" >> "$releasedir/rnd.txt"
+echo "$RANDOM_STRING" >>"$releasedir/rnd.txt"
 
-pushd "$tmpdir" > /dev/null
-zip -r release.zip release > /dev/null
-popd > /dev/null
+pushd "$tmpdir" >/dev/null
+zip -r release.zip release >/dev/null
+popd >/dev/null
 
 ##############################
 
@@ -83,7 +83,7 @@ type=chrome
 mkdir -p release/${type}
 cp "$tmpdir/release.zip" release/${type}/source_for_${type}_release_${version}.zip
 
-pushd release/${type}/ > /dev/null
+pushd release/${type}/ >/dev/null
 unzip source_for_${type}_release_${version}.zip
 cd release
 npm install
@@ -91,7 +91,7 @@ npm run build -- -v ${version} -t ${type} -c off
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "Chrome build failed"
-  exit 1;
+  exit 1
 fi
 npm run package -- -t ${type}
 
@@ -100,13 +100,13 @@ cp out/rel.zip ../${type}-${version}.zip
 cp out/rel.crx ../${type}-${version}.crx
 if [ $rc -ne 0 ]; then
   echo "Chrome crx build failed"
-  exit 1;
+  exit 1
 fi
 
 cd ..
 rm -rf release
 
-popd > /dev/null
+popd >/dev/null
 
 ##############################
 
@@ -114,7 +114,7 @@ type=firefox
 mkdir -p release/${type}
 cp "$tmpdir/release.zip" release/${type}/source_for_${type}_release_${version}.zip
 
-pushd release/${type}/ > /dev/null
+pushd release/${type}/ >/dev/null
 unzip source_for_${type}_release_${version}.zip
 cd release
 npm install
@@ -122,7 +122,7 @@ npm run build -- -v ${version} -t ${type} -c off
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "Firefox build failed"
-  exit 1;
+  exit 1
 fi
 
 npm run package -- -t ${type}
@@ -132,14 +132,50 @@ cp out/rel.xpi ../${type}-${version}.xpi
 rc=$?
 if [ $rc -ne 0 ]; then
   echo "Firefox xpi build failed"
-  exit 1;
+  exit 1
 fi
 
 cd ..
 rm -rf release
 
-popd > /dev/null
+popd >/dev/null
 
 ##############################
 
 rm -rf "$tmpdir"
+
+###
+
+echo "Release packages created successfully:"
+echo "  release/chrome-${version}.zip"
+echo "  release/chrome-${version}.crx"
+echo "  release/firefox-${version}.zip"
+echo "  release/firefox-${version}.xpi"
+echo "Sourcemaps:"
+echo "  release/chrome-${version}-sourcemaps.zip"
+echo "  release/firefox-${version}-sourcemaps.zip"
+echo "Source:"
+echo "  release/chrome/source_for_chrome_release_${version}.zip"
+echo "  release/firefox/source_for_firefox_release_${version}.zip"
+echo ""
+echo "Log file: $logfile"
+
+###
+
+# Check if ./unpack.sh exists
+if [ -f "./build_sys/unpack.sh" ]; then
+  echo "Running unpack script to verify the release packages..."
+  ./build_sys/unpack.sh
+  rc=$?
+  if [ $rc -ne 0 ]; then
+    echo "Unpack script failed to verify the release packages" >&2
+    exit 1
+  fi
+  echo "Unpack script completed successfully."
+else
+  echo "Unpack script not found, skipping verification."
+fi
+
+###
+
+exit 0

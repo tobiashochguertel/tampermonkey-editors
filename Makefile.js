@@ -25,7 +25,7 @@ const get_args_value = (args, arg) => {
         }
     });
     if (i === -1) return;
-    const [ , r ] = args.splice(i, 2);
+    const [, r] = args.splice(i, 2);
     return r;
 };
 
@@ -47,12 +47,12 @@ const args = process.argv.slice(2);
 const method = args[0];
 const forward_args = args.slice(1);
 
-const verbose = [ '1', 'true' ].includes(process.env['verbose']) || get_args_value(args, '-d') || false;
+const verbose = ['1', 'true'].includes(process.env['verbose']) || get_args_value(args, '-d') || false;
 
 let t = process.env.TARGET = process.env.TARGET || get_args_value(args, '-t') || 'chrome';
 const v = process.env.VERSION = process.env.VERSION || get_args_value(args, '-v') || 0;
 
-let [ target, manifest ] = t.split('+');
+let [target, manifest] = t.split('+');
 
 if (!manifest) {
     if (target == 'firefox') {
@@ -67,12 +67,33 @@ if (!manifest) {
 console.log(`Running for target: ${target}, manifest: ${manifest}`);
 
 const findAvailableBrowser = async () => {
-    const browsers = ["chromium", "google-chrome-beta", "google-chrome-unstable"];
+    // macOS app paths
+    const macOSBrowsers = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        "/Applications/Arc.app/Contents/MacOS/Arc"
+    ];
 
+    // Linux/PATH browsers
+    const browsers = ["chromium", "google-chrome", "google-chrome-beta", "google-chrome-unstable"];
+
+    // Check macOS browsers first
+    for (let browserPath of macOSBrowsers) {
+        if (fs.existsSync(browserPath)) {
+            return browserPath;
+        }
+    }
+
+    // Then check PATH browsers
     for (let browser of browsers) {
-        let path = await which(browser);
-        if (path) {
-            return path.toString();
+        try {
+            let resolvedPath = await which(browser);
+            if (resolvedPath) {
+                return resolvedPath.toString();
+            }
+        } catch (e) {
+            // Browser not found, continue
         }
     }
 
@@ -84,23 +105,23 @@ const zipFolder = (folder, fileName) => {
         let output = fs.createWriteStream(fileName);
         let archive = archiver('zip');
 
-        output.on('close', function() {
+        output.on('close', function () {
             resolve();
         });
 
-        archive.on('error', function(err) {
+        archive.on('error', function (err) {
             resolve("Failed to create archive: " + err.message);
         });
 
         archive.pipe(output);
 
-        glob(folder + '/**/*', function(err, files) {
+        glob(folder + '/**/*', function (err, files) {
             if (err) {
                 resolve("Failed to find files: " + err.message);
                 return;
             }
 
-            files.forEach(function(file) {
+            files.forEach(function (file) {
                 let relativePath = path.relative(folder, file);
                 archive.file(file, { name: relativePath });
             });
@@ -186,7 +207,7 @@ const methods = {
                 'npm',
                 [
                     'run', e.m
-                ].concat(e.a && e.a.length ? [ '--', ...e.a ] : []),
+                ].concat(e.a && e.a.length ? ['--', ...e.a] : []),
                 { stdio: 'inherit' }
             ).status;
 
@@ -233,7 +254,17 @@ const methods = {
                 exit(1);
             }
         } else if (target == 'firefox') {
-            const error = await zipFolder('out/rel', 'out/rel.xpi');
+            const zipFiles = ['rel.zip', 'rel.xpi'];
+            const errors = [];
+            await Promise.all(zipFiles.map(async (zipFile) => {
+                const p = path.resolve(__dirname, 'out', zipFile);
+                if (fs.existsSync(p)) {
+                    console.log('Removing old package:', p);
+                    fs.unlinkSync(p);
+                }
+                errors.push(await zipFolder('out/rel', `out/${zipFile}`));
+            }));
+            const error = errors.find(e => e);
             if (error) {
                 console.log(error);
                 console.log('Command package failed!');
@@ -272,7 +303,7 @@ const methods = {
                 'npm',
                 [
                     'run', e.m
-                ].concat(e.a && e.a.length ? [ '--', ...e.a ] : []),
+                ].concat(e.a && e.a.length ? ['--', ...e.a] : []),
                 { stdio: 'inherit' }
             ).status;
 

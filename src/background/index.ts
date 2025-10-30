@@ -98,13 +98,13 @@ const initRegisteredContentScripts = async () => {
             runAt: 'document_start' as const,
         }
     ];
-    const reg = await browser.scripting.getRegisteredContentScripts();
+    const reg = await chrome.scripting.getRegisteredContentScripts();
     if (reg.length) {
-        await browser.scripting.unregisterContentScripts({
+        await chrome.scripting.unregisterContentScripts({
             ids: reg.map(s => s.id)
         });
     }
-    await browser.scripting.registerContentScripts(scripts);
+    await chrome.scripting.registerContentScripts(scripts);
 };
 
 const init = async () => {

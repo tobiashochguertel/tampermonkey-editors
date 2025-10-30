@@ -81,6 +81,16 @@
             <div class="description">Opens scripts in VS Code Desktop application (requires VS Code installed)</div>
         </div>
     </div>
+
+    <div class="option-group">
+        <label for="extensionIds">External Extension IDs (Advanced):</label>
+        <input type="text" id="extensionIds" placeholder="e.g., dhdgffkkebhmkfjojejmpbldmpobfkfo" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px; font-family: monospace;">
+        <div class="description">
+            Only needed if using a custom/unpacked Tampermonkey.<br>
+            Leave empty to use default IDs (Chrome Web Store, Edge, Opera, etc.).<br>
+            Multiple IDs: separate with commas
+        </div>
+    </div>
     
     <button class="save-button" id="saveButton">Save Settings</button>
     <div class="status" id="status"></div>

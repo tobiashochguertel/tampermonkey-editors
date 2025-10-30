@@ -1,0 +1,410 @@
+content.js:77 content: normal start event processing for mhdlnra0.hqu (0 to run)
+content.js:76 content: DOMContentLoaded
+The FetchEvent for "https://devbytes.co.in/images/tldr/icon-transparent-save.png" resulted in a network error response: Cross-Origin-Resource-Policy prevented from serving the response to the client.
+bubble_compiled.js:118 Creating a TrustedTypePolicy named 'goog#html' violates the following Content Security policy directive: "trusted-types amdLoader cellRendererEditorText collapsedCellPreview defaultWorkerFactory diffEditorWidget diffEditorWidget2 diffReview domLineBreaksComputer dompurify editorGhostText editorViewLayer notebookRenderer stickyScrollViewLayer tokenizeToString notebookChatEditController richScreenReaderContent". The action has been blocked.
+goog.createTrustedTypesPolicy @ bubble_compiled.js:118
+bubble_compiled.js:100 Failed to execute 'createPolicy' on 'TrustedTypePolicyFactory': Policy "goog#html" disallowed.
+goog.logToConsole_ @ bubble_compiled.js:100
+devbytes.co.in/images/tldr/icon-transparent-save.png:1  Failed to load resource: net::ERR_FAILED
+The FetchEvent for "https://devbytes.co.in/images/tldr/icon-transparent-save.png" resulted in a network error response: Cross-Origin-Resource-Policy prevented from serving the response to the client.
+devbytes.co.in/images/tldr/icon-transparent-save.png:1  Failed to load resource: net::ERR_FAILED
+content.js:76 content: load
+executor.js:1 Creating a TrustedTypePolicy named 'LanguageTool_Executor_Policy' violates the following Content Security policy directive: "trusted-types amdLoader cellRendererEditorText collapsedCellPreview defaultWorkerFactory diffEditorWidget diffEditorWidget2 diffReview domLineBreaksComputer dompurify editorGhostText editorViewLayer notebookRenderer stickyScrollViewLayer tokenizeToString notebookChatEditController richScreenReaderContent". The action has been blocked.
+(anonymous) @ executor.js:1
+executor.js:1  Uncaught TypeError: Failed to execute 'createPolicy' on 'TrustedTypePolicyFactory': Policy "LanguageTool_Executor_Policy" disallowed.
+    at executor.js:1:961
+    at executor.js:1:1358
+log.ts:440  INFO Found additional builtin extension gallery resources in env Array(16)
+log.ts:440  INFO [PKief.markdown-checkbox]: Menu item references the same command as default and alt-command
+log.ts:440  INFO [PKief.markdown-checkbox]: Menu item references the same command as default and alt-command
+installHook.js:1   ERR Cannot read properties of null (reading '$ref'): TypeError: Cannot read properties of null (reading '$ref')
+    at GLe (https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:25963)
+    at https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26084
+    at Array.forEach (<anonymous>)
+    at GLe (https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26019)
+    at https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26084
+    at Array.forEach (<anonymous>)
+    at GLe (https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26019)
+    at https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26084
+    at Array.forEach (<anonymous>)
+    at GLe (https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/out/vs/workbench/workbench.web.main.internal.js:3005:26019)
+overrideMethod @ installHook.js:1
+content.js:77 content: normal start event processing for mhdpqbm3.4tp (3 to run)
+content.js:63 env: run "Universal Library Manager (Standalone)" ASAP -> document-start
+content.js:62 env: inject "Universal Library Manager (Standalone)" now
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO] 🚀 LibraryManager v1.0.0 initialized
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO] ✅ LibraryManager ready and exposed to window
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO] 💡 Debug commands:
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO]    LibraryManagerDebug.showStats()
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO]    LibraryManagerDebug.listLibraries()
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO]    LibraryManagerDebug.checkLibrary("mermaid")
+userscript.html?name=Universal-Library-Manager-Standalone.user.js&id=1f30e62a-f896-4109-9d17-254c00a26a51:82 [LibraryManager:INFO]    LibraryManagerDebug.enableDebug()
+content.js:63 env: run "TH-StorageLib" ASAP -> document-start
+content.js:62 env: inject "TH-StorageLib" now
+userscript.html?name=TH-StorageLib.user.js&id=0a2a83bf-bc2f-4714-9979-095d1cec7f01:352 TH-StorageLib v1.0.0 initialized - Storage management ready
+content.js:63 env: run "TH-LoggingLib" ASAP -> document-start
+content.js:62 env: inject "TH-LoggingLib" now
+userscript.html?name=TH-LoggingLib.user.js&id=93952af4-a4b6-45b2-b751-8678480d1e68:61 Using THLib.storage for log configuration persistence
+userscript.html?name=TH-LoggingLib.user.js&id=93952af4-a4b6-45b2-b751-8678480d1e68:187 [2025-10-30 14:31:45] [default] [INFO]: TH-LoggingLib v1.0.0 initialized with storage integration
+userscript.html?name=TH-LoggingLib.user.js&id=93952af4-a4b6-45b2-b751-8678480d1e68:380 TH-LoggingLib v1.0.0 is ready!Available commands:  THLibSetLogLevel("DEBUG")              Set global log level  THLibSetLogLevel("my-script", "TRACE") Set namespace log level  THLibShowLogConfig()                   Show logging configuration  THLibResetLogLevels()                  Reset all logging levelsAPI usage:  const logger = THLib.logging.getLogger("my-script");  logger.debug("Debug message");
+installHook.js:1   ERR [vscode.microsoft-authentication]: This authentication id 'microsoft' has already been registered
+overrideMethod @ installHook.js:1
+content.js:76 content: DOMContentLoaded
+content.js:76 content: load
+sw.js:1 SW Preloading workbench: {quality: 'stable', version: '7d842fb85a0275a4a8e4d7e040d2625abbf7f084'}
+sw.js:1 SW Garbage collecting 0 entries...
+sw.js:1 SW Done garbage collecting
+sw.js:1 SW Caching 0 entries...
+sw.js:1 SW Done caching workbench
+log.ts:440  INFO Settings Sync: Account status changed from uninitialized to available
+log.ts:440  INFO Updating additional builtin extensions cache
+installHook.js:1 Activating extension 'christian-kohler.path-intellisense' failed: Error.
+overrideMethod @ installHook.js:1
+$onExtensionActivationError @ mainThreadExtensionService.ts:107
+S @ rpcProtocol.ts:458
+Q @ rpcProtocol.ts:443
+M @ rpcProtocol.ts:373
+L @ rpcProtocol.ts:299
+(anonymous) @ rpcProtocol.ts:161
+C @ event.ts:1201
+fire @ event.ts:1232
+D.o.onmessage @ webWorkerExtensionHost.ts:230
+console.ts:137 [Extension Host] [vscode-icons] v12.15.0 (WEB) activated!
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.css.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/css/syntaxes/css.tmLanguage.json.
+New grammar file: https://csstools.vscode-unpkg.net/csstools/postcss/1.0.9/extension/syntaxes/source.css.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope text.html.handlebars.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json.
+New grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/handlebars.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.cpp.embedded.macro.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-cpp-syntax/1.27.1/extension/autogenerated/cpp.embedded.macro.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.cpp.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/cpp/syntaxes/cpp.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-cpp-syntax/1.27.1/extension/autogenerated/cpp.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.dockerfile.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/docker/syntaxes/docker.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-dockerfile-syntax/1.0.2/extension/syntaxes/dockerfile.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.shell.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-shellscript-syntax/1.10.0/extension/autogenerated/shell.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.env.
+Old grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/env.tmLanguage.json.
+New grammar file: https://mikestead.vscode-unpkg.net/mikestead/dotenv/1.0.1/extension/syntaxes/env.tmLanguage
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.desktop.
+Old grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/desktop.tmLanguage.json.
+New grammar file: https://nico-castell.vscode-unpkg.net/nico-castell/linux-desktop-file/0.0.21/extension/syntaxes/desktop.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.yaml.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/yaml/syntaxes/yaml.tmLanguage.json.
+New grammar file: https://redhat.vscode-unpkg.net/redhat/vscode-yaml/1.19.1/extension/syntaxes/yaml.tmLanguage.json
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+installHook.js:1 Overwriting grammar scope name to file mapping for scope source.nginx.
+Old grammar file: https://hangxingliu.vscode-unpkg.net/hangxingliu/vscode-nginx-conf-hint/0.3.1/extension/src/syntax/nginx.tmLanguage.
+New grammar file: https://shanoor.vscode-unpkg.net/shanoor/vscode-nginx/0.6.0/extension/syntaxes/nginx.tmLanguage
+overrideMethod @ installHook.js:1
+register @ TMScopeRegistry.ts:46
+_Ms @ TMGrammarFactory.ts:74
+S @ textMateTokenizationFeatureImpl.ts:270
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.css.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/css/syntaxes/css.tmLanguage.json.
+New grammar file: https://csstools.vscode-unpkg.net/csstools/postcss/1.0.9/extension/syntaxes/source.css.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope text.html.handlebars.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json.
+New grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/handlebars.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.cpp.embedded.macro.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-cpp-syntax/1.27.1/extension/autogenerated/cpp.embedded.macro.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.cpp.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/cpp/syntaxes/cpp.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-cpp-syntax/1.27.1/extension/autogenerated/cpp.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.dockerfile.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/docker/syntaxes/docker.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-dockerfile-syntax/1.0.2/extension/syntaxes/dockerfile.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.shell.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json.
+New grammar file: https://jeff-hykin.vscode-unpkg.net/jeff-hykin/better-shellscript-syntax/1.10.0/extension/autogenerated/shell.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.env.
+Old grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/env.tmLanguage.json.
+New grammar file: https://mikestead.vscode-unpkg.net/mikestead/dotenv/1.0.1/extension/syntaxes/env.tmLanguage
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.desktop.
+Old grammar file: https://edwinkofler.vscode-unpkg.net/EdwinKofler/vscode-assorted-languages/0.31.1/extension/syntaxes/desktop.tmLanguage.json.
+New grammar file: https://nico-castell.vscode-unpkg.net/nico-castell/linux-desktop-file/0.0.21/extension/syntaxes/desktop.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.yaml.
+Old grammar file: https://main.vscode-cdn.net/stable/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/yaml/syntaxes/yaml.tmLanguage.json.
+New grammar file: https://redhat.vscode-unpkg.net/redhat/vscode-yaml/1.19.1/extension/syntaxes/yaml.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.nginx.
+Old grammar file: https://hangxingliu.vscode-unpkg.net/hangxingliu/vscode-nginx-conf-hint/0.3.1/extension/src/syntax/nginx.tmLanguage.
+New grammar file: https://shanoor.vscode-unpkg.net/shanoor/vscode-nginx/0.6.0/extension/syntaxes/nginx.tmLanguage
+register @ TMScopeRegistry.ts:46
+Ls @ TMGrammarFactory.ts:74
+f @ textMateTokenizationWorker.worker.ts:89
+await in f
+$init @ textMateTokenizationWorker.worker.ts:70
+d @ webWorker.ts:465
+handleMessage @ webWorker.ts:441
+k @ webWorker.ts:224
+h @ webWorker.ts:188
+handleMessage @ webWorker.ts:157
+onmessage @ webWorker.ts:448
+Wo.globalThis.onmessage @ webWorkerBootstrap.ts:31
+VM27:1 Uncaught (in promise) SyntaxError: Unexpected end of JSON input
+u @ extension.js:3
+await in u
+t.updateCommandPalette @ extension.js:3
+h @ extension.js:3
+await in h
+t.activate @ extension.js:3
+await in t.activate
+kb @ extHostExtensionService.ts:596
+jb @ extHostExtensionService.ts:583
+(anonymous) @ extHostExtensionService.ts:496
+Promise.then
+hb @ extHostExtensionService.ts:494
+fb @ extHostExtensionService.ts:432
+await in fb
+actualActivateExtension @ extHostExtensionService.ts:199
+n @ extHostExtensionActivator.ts:423
+m @ extHostExtensionActivator.ts:418
+l @ extHostExtensionActivator.ts:380
+b0 @ extHostExtensionActivator.ts:368
+k @ extHostExtensionActivator.ts:327
+j @ extHostExtensionActivator.ts:323
+(anonymous) @ extHostExtensionActivator.ts:242
+h @ extHostExtensionActivator.ts:242
+activateById @ extHostExtensionActivator.ts:236
+bb @ extHostExtensionService.ts:305
+lb @ extHostExtensionService.ts:616
+(anonymous) @ extHostExtensionService.ts:662
+Promise.then
+nb @ extHostExtensionService.ts:652
+(anonymous) @ extHostExtensionService.ts:684
+Promise.then
+ob @ extHostExtensionService.ts:683
+(anonymous) @ extHostExtensionService.ts:816
+Promise.then
+tb @ extHostExtensionService.ts:816
+$startExtensionHost @ extHostExtensionService.ts:1022
+await in $startExtensionHost
+S @ rpcProtocol.ts:458
+Q @ rpcProtocol.ts:443
+M @ rpcProtocol.ts:373
+L @ rpcProtocol.ts:299
+(anonymous) @ rpcProtocol.ts:161
+C @ event.ts:1201
+fire @ event.ts:1232
+e.port1.onmessage @ extensionHostWorker.ts:195
+installHook.js:1 Unable to read file '/usernamehw/commands/1.16.0/extension/package.json' (Unavailable (FileSystemError): Error: No file system handle registered (/usernamehw))
+overrideMethod @ installHook.js:1
+c @ notificationsAlerts.ts:42
+(anonymous) @ notificationsAlerts.ts:28
+C @ event.ts:1201
+D @ event.ts:1212
+fire @ event.ts:1236
+addNotification @ notifications.ts:228
+notify @ notificationService.ts:234
+(anonymous) @ mainThreadMessageService.ts:93
+g @ mainThreadMessageService.ts:56
+$showMessage @ mainThreadMessageService.ts:50
+S @ rpcProtocol.ts:458
+Q @ rpcProtocol.ts:443
+M @ rpcProtocol.ts:373
+L @ rpcProtocol.ts:299
+(anonymous) @ rpcProtocol.ts:161
+C @ event.ts:1201
+fire @ event.ts:1232
+D.o.onmessage @ webWorkerExtensionHost.ts:230
+event.ts:42 [Violation] Added non-passive event listener to a scroll-blocking 'touchstart' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952
+onWillAddFirstListener @ event.ts:42
+u @ event.ts:1114
+(anonymous) @ event.ts:131
+onWillAddFirstListener @ event.ts:206
+u @ event.ts:1114
+A2e @ listWidget.ts:692
+E @ listWidget.ts:1551
+gc @ listWidget.ts:1526
+Pf @ listService.ts:280
+o @ instantiationService.ts:169
+createInstance @ instantiationService.ts:135
+r @ notificationsList.ts:74
+show @ notificationsList.ts:54
+P @ notificationsToasts.ts:219
+(anonymous) @ notificationsToasts.ts:169
+execute @ dom.ts:326
+n @ dom.ts:367
+(anonymous) @ dom.ts:385
+requestAnimationFrame
+Dr @ dom.ts:385
+O @ notificationsToasts.ts:169
+N @ notificationsToasts.ts:129
+(anonymous) @ notificationsToasts.ts:109
+C @ event.ts:1201
+D @ event.ts:1212
+fire @ event.ts:1236
+addNotification @ notifications.ts:228
+notify @ notificationService.ts:234
+(anonymous) @ mainThreadMessageService.ts:93
+g @ mainThreadMessageService.ts:56
+$showMessage @ mainThreadMessageService.ts:50
+S @ rpcProtocol.ts:458
+Q @ rpcProtocol.ts:443
+M @ rpcProtocol.ts:373
+L @ rpcProtocol.ts:299
+(anonymous) @ rpcProtocol.ts:161
+C @ event.ts:1201
+fire @ event.ts:1232
+D.o.onmessage @ webWorkerExtensionHost.ts:230
+log.ts:440  INFO Auto updating outdated extensions. ms-vscode.vscode-typescript-next, tldraw-org.tldraw-vscode
+installHook.js:1 Activating extension 'vsls-contrib.gistfs' failed: Cannot read properties of undefined (reading 'prototype').
+overrideMethod @ installHook.js:1
+$onExtensionActivationError @ mainThreadExtensionService.ts:107
+S @ rpcProtocol.ts:458
+Q @ rpcProtocol.ts:443
+M @ rpcProtocol.ts:373
+L @ rpcProtocol.ts:299
+(anonymous) @ rpcProtocol.ts:161
+C @ event.ts:1201
+fire @ event.ts:1232
+D.o.onmessage @ webWorkerExtensionHost.ts:230

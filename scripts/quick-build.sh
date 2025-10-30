@@ -1,5 +1,5 @@
 #!/bin/bash
-# Quick test script - just build and show paths
+# Quick test script - builds extensions directly without mkrelease.sh
 
 set -e
 
@@ -8,20 +8,51 @@ echo ""
 
 cd "$(dirname "$0")/.."
 
-# Quick build
-./build_sys/mkrelease.sh -v 999
+# Make sure we're using Node 18
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd --version-file-strategy=recursive --resolve-engines --shell bash)" 2>/dev/null || true
+    fnm use 2>/dev/null || true
+fi
 
-# Extract the built extensions to proper directories
-echo "Extracting extensions..."
-mkdir -p release/tampermonkey_editors_999.chrome_mv3
+NODE_VERSION=$(node -v | cut -d'v' -f2 | cut -d'.' -f1)
+echo "Using Node.js version: $(node -v)"
+if [ "$NODE_VERSION" -ne 18 ]; then
+    echo "⚠️  Warning: This project requires Node.js 18.x"
+    echo "You have Node $(node -v). Build may fail."
+    echo ""
+fi
+
+# Install dependencies with proper flags
+echo "📦 Installing dependencies..."
+NODE_ENV=development npm install --include=dev --silent
+
+# Clean
+echo "🧹 Cleaning previous builds..."
+rm -rf out release
+mkdir -p release
+
+# Set target
+export TARGET=firefox+mv3ep
+
+# Build
+echo "🔧 Building Firefox extension..."
+npm run build -- -v 999 -t firefox -c off
+
+# Package
+echo "📦 Packaging..."
+npm run package -- -t firefox
+
+# Extract for development
+echo "📂 Creating unpacked extensions..."
 mkdir -p release/tampermonkey_editors_999.firefox_mv3
+mkdir -p release/tampermonkey_editors_999.chrome_mv3
 
-# Extract Firefox (already built as .xpi)
-if [ -f "release/firefox/firefox-999.xpi" ]; then
-    unzip -q release/firefox/firefox-999.xpi -d release/tampermonkey_editors_999.firefox_mv3
+if [ -f "out/rel.xpi" ]; then
+    # Extract Firefox
+    unzip -q out/rel.xpi -d release/tampermonkey_editors_999.firefox_mv3
     
     # Create Chrome version (same code, different manifest)
-    unzip -q release/firefox/firefox-999.xpi -d release/tampermonkey_editors_999.chrome_mv3
+    unzip -q out/rel.xpi -d release/tampermonkey_editors_999.chrome_mv3
     
     # Update Chrome manifest
     cat > release/tampermonkey_editors_999.chrome_mv3/manifest.json << 'MANIFEST_EOF'
@@ -64,23 +95,26 @@ if [ -f "release/firefox/firefox-999.xpi" ]; then
     "options_page": "options.html"
 }
 MANIFEST_EOF
-fi
 
-echo ""
-echo "✅ Build complete!"
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📂 LOAD THESE FOLDERS IN YOUR BROWSER:"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
-echo "For Chrome/Edge:"
-echo "  $(pwd)/release/tampermonkey_editors_999.chrome_mv3"
-echo ""
-echo "For Firefox:"
-echo "  $(pwd)/release/tampermonkey_editors_999.firefox_mv3/manifest.json"
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
-echo "💡 Chrome: chrome://extensions/ → Load unpacked"
-echo "💡 Firefox: about:debugging#/runtime/this-firefox → Load Temporary Add-on"
-echo ""
+    echo ""
+    echo "✅ Build complete!"
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "📂 LOAD THESE FOLDERS IN YOUR BROWSER:"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "For Chrome/Edge:"
+    echo "  $(pwd)/release/tampermonkey_editors_999.chrome_mv3"
+    echo ""
+    echo "For Firefox:"
+    echo "  $(pwd)/release/tampermonkey_editors_999.firefox_mv3/manifest.json"
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "💡 Chrome: chrome://extensions/ → Load unpacked"
+    echo "💡 Firefox: about:debugging#/runtime/this-firefox → Load Temporary Add-on"
+    echo ""
+else
+    echo "❌ Build failed - no .xpi file created"
+    exit 1
+fi

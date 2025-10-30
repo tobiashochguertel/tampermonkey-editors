@@ -20,7 +20,8 @@
     "build:watch": "nodemon --watch src --ext \"ts,json,js\" --exec \"npm run build\"",
     "package": "node -r esm Makefile.js package",
     "all": "node -r esm Makefile.js all",
-    "all:watch": "nodemon --watch src --ext \"ts,json,js\" --exec \"npm run all\""
+    "all:watch": "nodemon --watch src --ext \"ts,json,js\" --exec \"npm run all\"",
+    "validate": "bash scripts/validate-build.sh"
   },
   "sideEffects": [
     "./src/polyfills/**/*.ts"

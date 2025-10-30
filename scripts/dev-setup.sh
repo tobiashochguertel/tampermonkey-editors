@@ -66,72 +66,37 @@ echo "Cleaning previous builds..."
 rm -rf out release
 mkdir -p release
 
-# Set target
+# Build Firefox first
 export TARGET=firefox+mv3ep
-
-# Build
 echo "Building Firefox extension..."
 npm run build -- -v 999 -t firefox -c off
-
-# Package
-echo "Packaging..."
 npm run package -- -t firefox
+
+# Build Chrome
+export TARGET=chrome+mv3
+echo "Building Chrome extension..."
+npm run build -- -v 999 -t chrome -c off
 
 # Extract for development
 echo "Creating unpacked extensions..."
 mkdir -p release/tampermonkey_editors_999.firefox_mv3
 mkdir -p release/tampermonkey_editors_999.chrome_mv3
 
+# Extract Firefox
 if [ -f "out/rel.xpi" ]; then
-    # Extract Firefox
     unzip -q out/rel.xpi -d release/tampermonkey_editors_999.firefox_mv3
-    
-    # Create Chrome version (same code, different manifest)
-    unzip -q out/rel.xpi -d release/tampermonkey_editors_999.chrome_mv3
-    
-    # Update Chrome manifest
-    cat > release/tampermonkey_editors_999.chrome_mv3/manifest.json << 'MANIFEST_EOF'
-{
-    "manifest_version": 3,
-    "minimum_chrome_version": "102.0.0.0",
-    "offline_enabled": true,
-    "action": {
-        "default_icon": {
-            "16": "images/icon.png",
-            "24": "images/icon24.png",
-            "32": "images/icon32.png"
-        },
-        "default_title": "Tampermonkey Editors"
-    },
-    "icons": {
-        "16": "images/icon.png",
-        "24": "images/icon24.png",
-        "32": "images/icon32.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
-    },
-    "name": "Tampermonkey Editors",
-    "short_name": "Tampermonkey Editors",
-    "version": "1.0.999",
-    "description": "Online editor support for Tampermonkey's userscripts",
-    "default_locale": "en",
-    "background": {
-       "service_worker": "background.js"
-    },
-    "permissions": [
-        "tabs",
-        "webNavigation",
-        "storage",
-        "scripting"
-    ],
-    "host_permissions": [
-        "https://*.vscode.dev/*"
-    ],
-    "options_page": "options.html"
-}
-MANIFEST_EOF
+    echo "✅ Firefox extension extracted"
 else
-    echo "❌ Build failed - no .xpi file created"
+    echo "❌ Firefox build failed"
+    exit 1
+fi
+
+# Copy Chrome (built files are already in out/rel/)
+if [ -d "out/rel" ]; then
+    cp -r out/rel/* release/tampermonkey_editors_999.chrome_mv3/
+    echo "✅ Chrome extension copied"
+else
+    echo "❌ Chrome build failed"
     exit 1
 fi
 

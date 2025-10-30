@@ -189,6 +189,14 @@ const getConfigs = () => {
                     {
                         from: './LICENSE',
                         to: 'rel/'
+                    },
+                    {
+                        from: './src/options/options.html',
+                        to: 'rel/options.html'
+                    },
+                    {
+                        from: './src/options/options.js',
+                        to: 'rel/options.js'
                     }
                 ]
             })

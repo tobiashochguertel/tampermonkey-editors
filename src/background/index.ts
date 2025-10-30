@@ -13,8 +13,17 @@ import { findTm } from './find_tm';
 import Storage from './storage';
 import { hasHostPermission, requestHostPermission } from './host_permission';
 
-const MAIN_URL = 'https://vscode.dev/?connectTo=tampermonkey';
+const WEB_EDITOR_URL = 'https://vscode.dev/?connectTo=tampermonkey';
+const DESKTOP_EDITOR_URL = 'vscode://';
 const { runtime, action, tabs, webNavigation, scripting } = chrome;
+
+const getMainUrl = (): string => {
+    return Config.values.editorType === 'desktop' ? DESKTOP_EDITOR_URL : WEB_EDITOR_URL;
+};
+
+const isWebEditor = (): boolean => {
+    return Config.values.editorType === 'web';
+};
 
 const setForbidden = async (forbidden: boolean) => {
     /* eslint-disable @typescript-eslint/naming-convention */
@@ -47,7 +56,7 @@ const setForbidden = async (forbidden: boolean) => {
 const initWebNavigation = () => {
     webNavigation.onCommitted.addListener(async details => {
         const { url, tabId } = details;
-        if (url.startsWith(MAIN_URL)) {
+        if (url.startsWith(WEB_EDITOR_URL)) {
             scripting.executeScript({
                 files: [
                     'content.js'
@@ -78,13 +87,13 @@ const initRegisteredContentScripts = async () => {
     const scripts = [
         {
             id: 'content',
-            matches: [ MAIN_URL + '*' ],
+            matches: [ WEB_EDITOR_URL + '*' ],
             js: [ 'content.js' ],
             runAt: 'document_start' as const,
         },
         {
             id: 'js',
-            matches: [ MAIN_URL + '*' ],
+            matches: [ WEB_EDITOR_URL + '*' ],
             js: [ 'page.js' ],
             runAt: 'document_start' as const,
         }
@@ -115,7 +124,7 @@ const init = async () => {
             lock = new Promise<void>(r => resolve = r);
             lock.then(() => lock = undefined);
 
-            const r = await findTm([ MAIN_URL ]);
+            const r = await findTm([ WEB_EDITOR_URL ]);
 
             if (!r.length) {
                 sendResponse({ error: 'no extension to talk to' });
@@ -147,7 +156,10 @@ const init = async () => {
     let hhp: boolean | undefined;
     action.onClicked.addListener(async (_details) => {
         void(runtime.lastError);
-        if (!hhp) {
+        const mainUrl = getMainUrl();
+        const isWeb = isWebEditor();
+        
+        if (isWeb && !hhp) {
             const granted = await requestHostPermission();
             if (granted) {
                 hhp = granted;
@@ -157,13 +169,18 @@ const init = async () => {
             }
         }
 
-        tabs.query({ url: MAIN_URL + '*' }, info => {
-            if (info && info.length && info[0].id) {
-                tabs.update(info[0].id, { active: true }, () => runtime.lastError);
-            } else {
-                tabs.create({ url: MAIN_URL, active: true }, () => runtime.lastError);
-            }
-        });
+        if (isWeb) {
+            tabs.query({ url: mainUrl + '*' }, info => {
+                if (info && info.length && info[0].id) {
+                    tabs.update(info[0].id, { active: true }, () => runtime.lastError);
+                } else {
+                    tabs.create({ url: mainUrl, active: true }, () => runtime.lastError);
+                }
+            });
+        } else {
+            // For desktop editor, just open the protocol handler
+            tabs.create({ url: mainUrl, active: true }, () => runtime.lastError);
+        }
 
     });
 
@@ -175,7 +192,7 @@ const init = async () => {
     })();
 
     (async () => {
-        hhp = await hasHostPermission(MAIN_URL);
+        hhp = await hasHostPermission(WEB_EDITOR_URL);
         setForbidden(!hhp);
     })();
 

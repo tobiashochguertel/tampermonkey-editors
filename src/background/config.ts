@@ -12,7 +12,8 @@ export type ExtensionConfig = ExtensionPermanentConfig & ExtensionSessionConfig;
 type ExtensionPermanentConfig = {
     logLevel: LogLevel,
     configMode: number,
-    externalExtensionIds: ExtensionIdToTry[]
+    externalExtensionIds: ExtensionIdToTry[],
+    editorType: 'web' | 'desktop'
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -28,7 +29,8 @@ const changeListeners: { [config_value in (ConfigKeys | SessionKeys)]?: ChangeLi
 const defaults: ExtensionPermanentConfig = {
     configMode: 0,
     logLevel: short_id === 'hohm' ? 100 : 0,
-    externalExtensionIds: [ ...ExtensionIdsToTry ]
+    externalExtensionIds: [ ...ExtensionIdsToTry ],
+    editorType: 'web'
 };
 
 const session_defaults: ExtensionSessionConfig & Partial<ExtensionPermanentConfig> = {

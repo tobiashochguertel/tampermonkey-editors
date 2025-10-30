@@ -78,8 +78,20 @@ const getConfigs = () => {
                             inline: true,
                             keep_fargs: false,
                             hoist_funs: true,
-                            toplevel: true
+                            conditionals: true,
+                            evaluate: true,
+                            booleans: true,
+                            loops: true,
+                            unused: true,
+                            if_return: true,
+                            join_vars: true,
+                            collapse_vars: true,
+                            reduce_vars: true,
+                            drop_console: false,
+                            drop_debugger: true,
+                            pure_funcs: []
                         },
+                        toplevel: true,
                         mangle: true, // Note `mangle.properties` is `false` by default.
                         module: false, // keep 'use strict' statements
                         nameCache: null,
